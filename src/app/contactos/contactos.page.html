@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">contactos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button routerLink="/home" class="menu">
+    Inicio
+  </ion-button>
+  <ion-button routerLink="/calculadora" class="menu">
+    calculadora
+
+  </ion-button>
+  <ion-button routerLink="/memorama" class="menu">
+    memorama
+  </ion-button>
+  
+</ion-content>
+
+
+<ion-content>
+  <div class="contacts">
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newContact.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="newContact.phone"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="addContact()">Add Contact</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let contact of contacts">
+        <ion-label class="contact">
+          <div>
+            <h2>{{ contact.name }}</h2>
+            <p>{{ contact.phone }}</p>
+          </div>
+          <ion-button
+            (click)="deleteContact(contact)"
+            expand="block"
+            fill="solid"
+            color="danger"
+            class="deleteButton">
+          </ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

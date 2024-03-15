@@ -1,0 +1,7 @@
+{
+  "name": "Cassandra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

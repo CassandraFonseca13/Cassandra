@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Memorama
+    </ion-title>
+  </ion-toolbar>
+  <ion-button routerLink="/home" class="menu">
+    Inicio
+  </ion-button>
+  <ion-button routerLink="/calculadora" class="menu">
+    Calculadora
+  </ion-button>
+  <ion-button routerLink="/contactos" class="menu">
+    Contactos
+  </ion-button>
+</ion-header>
+
+
+
+
+<ion-content class="ion-padding">
+  <button *ngIf="!gameStarted" (click)="startGame()" ion-button color="primary">Iniciar Juego</button>
+
+  <div *ngIf="gameStarted">
+    <button (click)="restartGame()" ion-button color="warning">Reiniciar Juego</button>
+
+    <div class="cards-container">
+      <app-card *ngFor="let card of cards" [card]="card" (click)="cardClicked(card)"></app-card>
+    </div>
+
+    <div *ngIf="victory" class="victory-message">
+      ¡Has ganado!
+    </div>
+  </div>
+</ion-content>
+

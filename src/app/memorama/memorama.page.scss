@@ -1,0 +1,20 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 columnas
+  grid-gap: 5px; // Espacio entre las cartas
+  width: 50%; // Ancho fijo
+  height: 50%; // Alto fijo
+  margin: auto; // Centramos el contenedor
+
+}
+
+ion-card {
+  margin: 100px;
+}
+
+body {
+  background-color: #ecaddd;
+}
+.menu{
+  width: 300px;
+}
